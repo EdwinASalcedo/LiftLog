@@ -1,0 +1,230 @@
+[
+  {
+    "id": "bench-press",
+    "name": "Bench Press",
+    "bodyPart": "Chest",
+    "category": "Barbell"
+  },
+  {
+    "id": "squat",
+    "name": "Squat",
+    "bodyPart": "Legs",
+    "category": "Barbell"
+  },
+  {
+    "id": "deadlift",
+    "name": "Deadlift",
+    "bodyPart": "Back",
+    "category": "Barbell"
+  },
+  {
+    "id": "incline-bench-press",
+    "name": "Incline Bench Press",
+    "bodyPart": "Chest",
+    "category": "Barbell"
+  },
+  {
+    "id": "decline-bench-press",
+    "name": "Decline Bench Press",
+    "bodyPart": "Chest",
+    "category": "Barbell"
+  },
+  {
+    "id": "barbell-row",
+    "name": "Barbell Row",
+    "bodyPart": "Back",
+    "category": "Barbell"
+  },
+  {
+    "id": "pull-up",
+    "name": "Pull Up",
+    "bodyPart": "Back",
+    "category": "Reps Only"
+  },
+  {
+    "id": "chin-up",
+    "name": "Chin Up",
+    "bodyPart": "Back",
+    "category": "Reps Only"
+  },
+  {
+    "id": "assisted-dip",
+    "name": "Assisted Dip",
+    "bodyPart": "Arms",
+    "category": "Assisted Bodyweight"
+  },
+  {
+    "id": "dip",
+    "name": "Dip",
+    "bodyPart": "Arms",
+    "category": "Reps Only"
+  },
+  {
+    "id": "overhead-press",
+    "name": "Overhead Press",
+    "bodyPart": "Shoulders",
+    "category": "Barbell"
+  },
+  {
+    "id": "shoulder-press-machine",
+    "name": "Shoulder Press Machine",
+    "bodyPart": "Shoulders",
+    "category": "Machine / Other"
+  },
+  {
+    "id": "dumbbell-curl",
+    "name": "Dumbbell Curl",
+    "bodyPart": "Arms",
+    "category": "Dumbbell"
+  },
+  {
+    "id": "hammer-curl",
+    "name": "Hammer Curl",
+    "bodyPart": "Arms",
+    "category": "Dumbbell"
+  },
+  {
+    "id": "concentration-curl",
+    "name": "Concentration Curl",
+    "bodyPart": "Arms",
+    "category": "Dumbbell"
+  },
+  {
+    "id": "tricep-pushdown",
+    "name": "Tricep Pushdown",
+    "bodyPart": "Arms",
+    "category": "Machine / Other"
+  },
+  {
+    "id": "lat-pulldown",
+    "name": "Lat Pulldown",
+    "bodyPart": "Back",
+    "category": "Machine / Other"
+  },
+  {
+    "id": "cable-row",
+    "name": "Cable Row",
+    "bodyPart": "Back",
+    "category": "Machine / Other"
+  },
+  {
+    "id": "leg-extension",
+    "name": "Leg Extension",
+    "bodyPart": "Legs",
+    "category": "Machine / Other"
+  },
+  {
+    "id": "leg-curl",
+    "name": "Leg Curl",
+    "bodyPart": "Legs",
+    "category": "Machine / Other"
+  },
+  {
+    "id": "leg-press",
+    "name": "Leg Press",
+    "bodyPart": "Legs",
+    "category": "Machine / Other"
+  },
+  {
+    "id": "plank",
+    "name": "Plank",
+    "bodyPart": "Core",
+    "category": "Duration"
+  },
+  {
+    "id": "sit-up",
+    "name": "Sit Up",
+    "bodyPart": "Core",
+    "category": "Reps Only"
+  },
+  {
+    "id": "russian-twist",
+    "name": "Russian Twist",
+    "bodyPart": "Core",
+    "category": "Weighted Bodyweight"
+  },
+  {
+    "id": "kettlebell-swing",
+    "name": "Kettlebell Swing",
+    "bodyPart": "Full Body",
+    "category": "Weighted Bodyweight"
+  },
+  {
+    "id": "power-clean",
+    "name": "Power Clean",
+    "bodyPart": "Olympic",
+    "category": "Barbell"
+  },
+  {
+    "id": "snatch",
+    "name": "Snatch",
+    "bodyPart": "Olympic",
+    "category": "Barbell"
+  },
+  {
+    "id": "clean-and-jerk",
+    "name": "Clean and Jerk",
+    "bodyPart": "Olympic",
+    "category": "Barbell"
+  },
+  {
+    "id": "burpee",
+    "name": "Burpee",
+    "bodyPart": "Full Body",
+    "category": "Reps Only"
+  },
+  {
+    "id": "mountain-climber",
+    "name": "Mountain Climber",
+    "bodyPart": "Core",
+    "category": "Reps Only"
+  },
+  {
+    "id": "stationary-bike",
+    "name": "Stationary Bike",
+    "bodyPart": "Cardio",
+    "category": "Cardio"
+  },
+  {
+    "id": "treadmill-run",
+    "name": "Treadmill Run",
+    "bodyPart": "Cardio",
+    "category": "Duration"
+  },
+  {
+    "id": "rowing-machine",
+    "name": "Rowing Machine",
+    "bodyPart": "Cardio",
+    "category": "Cardio"
+  },
+  {
+    "id": "jump-rope",
+    "name": "Jump Rope",
+    "bodyPart": "Cardio",
+    "category": "Duration"
+  },
+  {
+    "id": "step-up",
+    "name": "Step Up",
+    "bodyPart": "Legs",
+    "category": "Weighted Bodyweight"
+  },
+  {
+    "id": "hip-thrust",
+    "name": "Hip Thrust",
+    "bodyPart": "Legs",
+    "category": "Weighted Bodyweight"
+  },
+  {
+    "id": "dumbbell-lateral-raise",
+    "name": "Dumbbell Lateral Raise",
+    "bodyPart": "Shoulders",
+    "category": "Dumbbell"
+  },
+  {
+    "id": "dumbbell-bench-press",
+    "name": "Dumbbell Bench Press",
+    "bodyPart": "Chest",
+    "category": "Dumbbell"
+  }
+]

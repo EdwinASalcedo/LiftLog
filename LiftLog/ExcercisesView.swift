@@ -8,45 +8,48 @@
 import SwiftUI
 
 struct ExcercisesView: View {
-    let testData = [
-        Exercise(name: "Bench Press", bodyPart: "Chest", category: "Barbell"),
-        Exercise(name: "Squat", bodyPart: "Legs", category: "Barbell"),
-        Exercise(name: "Shoulder Press", bodyPart: "Shoulders", category: "Dumbbell"),
-    ]
+    let exercises: [Exercise] = Bundle.main.decode("exercises.json")
     
     @State private var searchText = ""
     var filteredExercises: [Exercise] {
         if searchText.isEmpty {
-            testData
+            exercises
         } else {
-            testData.filter { $0.name.localizedStandardContains(searchText) }
+            exercises.filter { $0.name.localizedStandardContains(searchText) }
         }
     }
     
     var body: some View {
         NavigationView {
-            List(testData) { exercise in
+            List(filteredExercises.sorted {$0.name < $1.name} ) { exercise in
                 HStack {
                     Image(systemName: "questionmark.circle")
                         .padding(.horizontal)
                     
-                    VStack {
+                    VStack(alignment: .leading) {
                         Text(exercise.name)
                         Text(exercise.bodyPart)
+                            .foregroundStyle(.secondary)
                     }
                 }
             }
             .navigationTitle("Exercises")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading){
-                    Text("New")
+                    Button("New") {
+                        // code to add new exercise
+                    }
                 }
                 
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Image(systemName: "ellipsis")
-                }
+                    Button() {
+                        // code to show archived exercises
+                    } label: {
+                        Image(systemName: "ellipsis")
+                    }
+                }            
             }
-            .searchable(text: $searchText, prompt: "Search")
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search")
         }
         
     }

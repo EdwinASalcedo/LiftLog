@@ -8,6 +8,13 @@
 import SwiftUI
 
 struct StartView: View {
+    let folders: [Folder] = [Folder.example, Folder.example, Folder.example]
+    // fit as many columns in view so long as there is a min 150 px gap
+    let columns = [
+        GridItem(.adaptive(minimum: 130))
+    ]
+    @State private var showingPopover = false
+    
     var body: some View {
         NavigationStack {
             ScrollView {
@@ -19,8 +26,8 @@ struct StartView: View {
                     Button("Start an Empty Workout") {
                         
                     }
-                    .buttonStyle(.bordered)
                     .frame(maxWidth: .infinity)
+                    .buttonStyle(.bordered)
                     
                     HStack {
                         Text("Templates")
@@ -35,7 +42,7 @@ struct StartView: View {
                             Image(systemName: "plus")
                         }
                         .buttonStyle(.bordered)
-                        .tint(.mint)
+                        .tint(.blue)
                         
                         Button() {
                             
@@ -43,7 +50,7 @@ struct StartView: View {
                             Image(systemName: "folder")
                         }
                         .buttonStyle(.bordered)
-                        .tint(.mint)
+                        .tint(.blue)
                         
                         Button() {
                             
@@ -51,24 +58,63 @@ struct StartView: View {
                             Image(systemName: "ellipsis")
                         }
                         .buttonStyle(.bordered)
-                        .tint(.mint)
+                        .tint(.blue)
                     }
                     .padding(.vertical)
                     
-                    // later going to be a ForEach(folder)
-                    HStack {
-                        Text("My Templates (#)")
-                            .font(.headline)
-                        
-                        Spacer()
-                        
-                        Button() {
+                    ForEach(folders) { folder in
+                        HStack {
+                            Text(folder.name)
+                            Text("(\(folder.numberOfTemplates))")
                             
-                        } label: {
-                            Image(systemName: "ellipsis")
+                            Spacer()
+                            
+                            Button() {
+                                
+                            } label: {
+                                Image(systemName: "ellipsis")
+                            }
+                            .buttonStyle(.bordered)
+                            .tint(.blue)
                         }
-                        .buttonStyle(.bordered)
-                        .tint(.mint)
+                        
+                        LazyVGrid(columns: columns) {
+                            ForEach(folder.templates) { template in
+                                VStack(alignment: .leading) {
+                                    HStack {
+                                        Text(template.name)
+                                        
+                                        Spacer()
+                                        
+                                        Button() {
+                                            
+                                        } label: {
+                                            Image(systemName: "ellipsis")
+                                        }
+                                        .buttonStyle(.bordered)
+                                        .tint(.blue)
+                                    }
+                                    .padding([.top, .horizontal])
+                                    
+                                    Text(template.exercises.map {$0.name}.joined(separator: ", "))
+                                        .padding(.horizontal)
+                                        .foregroundStyle(.secondary)
+                                    
+                                    Spacer()
+                                }
+                                .frame(minHeight: 150, maxHeight: 150)
+                                .clipShape(.rect(cornerRadius: 10))
+                                .overlay(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .stroke(.secondary)
+                                )
+                                .onTapGesture {
+                                    showingPopover = true
+                                    print("Hi")
+                                }
+                            }
+                        }
+                        .padding(.bottom)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
