@@ -16,13 +16,19 @@ struct Template: Codable, Identifiable, Hashable {
     static let example: Template = .init(
         id: "push-day",
         name: "Push Day",
-        exercises: [Exercise.allExercises[0], Exercise.allExercises[9], Exercise.allExercises[10], Exercise.allExercises[15], Exercise.allExercises[36]],
-        lastUsed: nil
+        exercises: [.allExercises[0], .allExercises[9], .allExercises[10], .allExercises[15], .allExercises[36]],
+        lastUsed: Date()
     )
     static let example2: Template = .init(
         id: "leg-day",
         name: "Leg Day",
-        exercises: [Exercise.allExercises[1], Exercise.allExercises[2], Exercise.allExercises[18], Exercise.allExercises[19], Exercise.allExercises[35]],
-        lastUsed: nil
+        exercises: [.allExercises[1], .allExercises[2], .allExercises[18], .allExercises[19], .allExercises[35]],
+        lastUsed: Date()
+    )
+    static let emptyTemplate: Template = .init(
+        id: "",
+        name: "New Workout",
+        exercises: [],
+        lastUsed: Date()
     )
 }

@@ -14,6 +14,7 @@ struct StartView: View {
         GridItem(.adaptive(minimum: 130))
     ]
     @State private var showingPopover = false
+    @State private var showingWorkoutSheet = false
     
     var body: some View {
         NavigationStack {
@@ -23,11 +24,19 @@ struct StartView: View {
                         .font(.headline)
                         .padding(.top)
                     
-                    Button("Start an Empty Workout") {
-                        
+                    Button(action: { showingWorkoutSheet.toggle() }) {
+                        Text("Start an Empty Workout")
+                            .frame(maxWidth: .infinity)
+                            .bold(true)
                     }
-                    .frame(maxWidth: .infinity)
-                    .buttonStyle(.bordered)
+                    .buttonStyle(.borderedProminent)
+                    .tint(.blue)
+                    .sheet(isPresented: $showingWorkoutSheet) {
+                        WorkoutView(template: Template.emptyTemplate)
+                            .presentationDragIndicator(.visible)
+                            .presentationDetents([.large])
+                    }
+
                     
                     HStack {
                         Text("Templates")
@@ -83,6 +92,7 @@ struct StartView: View {
                                 VStack(alignment: .leading) {
                                     HStack {
                                         Text(template.name)
+                                            .bold(true)
                                         
                                         Spacer()
                                         
@@ -97,12 +107,22 @@ struct StartView: View {
                                     .padding([.top, .horizontal])
                                     
                                     Text(template.exercises.map {$0.name}.joined(separator: ", "))
+                                        .font(.footnote)
                                         .padding(.horizontal)
                                         .foregroundStyle(.secondary)
                                     
                                     Spacer()
+                                    
+                                    HStack {
+                                        Image(systemName: "clock.fill")
+                                        Text(Date.now, style: .relative)
+                                    }
+                                    .padding([.horizontal, .bottom])
+                                    .font(.footnote)
+                                    .foregroundStyle(.secondary)
+                                    .italic(true)
                                 }
-                                .frame(minHeight: 150, maxHeight: 150)
+                                .frame(minHeight: 150, maxHeight: 160)
                                 .clipShape(.rect(cornerRadius: 10))
                                 .overlay(
                                     RoundedRectangle(cornerRadius: 10)

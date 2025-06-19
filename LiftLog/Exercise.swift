@@ -12,20 +12,7 @@ struct Exercise: Identifiable, Codable, Hashable {
     var name: String
     var bodyPart: String
     var category: String
+    var previousSets: [Set] = [] // allows this to be optional during JSON decoding
     
     static let allExercises: [Exercise] = Bundle.main.decode("exercises.json")
-    
-    static let example = Exercise(
-        id: "bench-press",
-        name: "Bench Press",
-        bodyPart: "Chest",
-        category: "Barbell"
-    )
-    
-    static let example2 = Exercise(
-        id: "squat",
-        name: "Squat",
-        bodyPart: "Legs",
-        category: "Barbell"
-    )
 }

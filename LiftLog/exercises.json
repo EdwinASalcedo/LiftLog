@@ -3,228 +3,456 @@
     "id": "bench-press",
     "name": "Bench Press",
     "bodyPart": "Chest",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "squat",
     "name": "Squat",
     "bodyPart": "Legs",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "deadlift",
     "name": "Deadlift",
     "bodyPart": "Back",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "incline-bench-press",
     "name": "Incline Bench Press",
     "bodyPart": "Chest",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "decline-bench-press",
     "name": "Decline Bench Press",
     "bodyPart": "Chest",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "barbell-row",
     "name": "Barbell Row",
     "bodyPart": "Back",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "pull-up",
     "name": "Pull Up",
     "bodyPart": "Back",
-    "category": "Reps Only"
+    "category": "Reps Only",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "chin-up",
     "name": "Chin Up",
     "bodyPart": "Back",
-    "category": "Reps Only"
+    "category": "Reps Only",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "assisted-dip",
     "name": "Assisted Dip",
     "bodyPart": "Arms",
-    "category": "Assisted Bodyweight"
+    "category": "Assisted Bodyweight",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "dip",
     "name": "Dip",
     "bodyPart": "Arms",
-    "category": "Reps Only"
+    "category": "Reps Only",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "overhead-press",
     "name": "Overhead Press",
     "bodyPart": "Shoulders",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "shoulder-press-machine",
     "name": "Shoulder Press Machine",
     "bodyPart": "Shoulders",
-    "category": "Machine / Other"
+    "category": "Machine / Other",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "dumbbell-curl",
     "name": "Dumbbell Curl",
     "bodyPart": "Arms",
-    "category": "Dumbbell"
+    "category": "Dumbbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "hammer-curl",
     "name": "Hammer Curl",
     "bodyPart": "Arms",
-    "category": "Dumbbell"
+    "category": "Dumbbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "concentration-curl",
     "name": "Concentration Curl",
     "bodyPart": "Arms",
-    "category": "Dumbbell"
+    "category": "Dumbbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "tricep-pushdown",
     "name": "Tricep Pushdown",
     "bodyPart": "Arms",
-    "category": "Machine / Other"
+    "category": "Machine / Other",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "lat-pulldown",
     "name": "Lat Pulldown",
     "bodyPart": "Back",
-    "category": "Machine / Other"
+    "category": "Machine / Other",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "cable-row",
     "name": "Cable Row",
     "bodyPart": "Back",
-    "category": "Machine / Other"
+    "category": "Machine / Other",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "leg-extension",
     "name": "Leg Extension",
     "bodyPart": "Legs",
-    "category": "Machine / Other"
+    "category": "Machine / Other",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "leg-curl",
     "name": "Leg Curl",
     "bodyPart": "Legs",
-    "category": "Machine / Other"
+    "category": "Machine / Other",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "leg-press",
     "name": "Leg Press",
     "bodyPart": "Legs",
-    "category": "Machine / Other"
+    "category": "Machine / Other",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "plank",
     "name": "Plank",
     "bodyPart": "Core",
-    "category": "Duration"
+    "category": "Duration",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "sit-up",
     "name": "Sit Up",
     "bodyPart": "Core",
-    "category": "Reps Only"
+    "category": "Reps Only",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "russian-twist",
     "name": "Russian Twist",
     "bodyPart": "Core",
-    "category": "Weighted Bodyweight"
+    "category": "Weighted Bodyweight",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "kettlebell-swing",
     "name": "Kettlebell Swing",
     "bodyPart": "Full Body",
-    "category": "Weighted Bodyweight"
+    "category": "Weighted Bodyweight",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "power-clean",
     "name": "Power Clean",
     "bodyPart": "Olympic",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "snatch",
     "name": "Snatch",
     "bodyPart": "Olympic",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "clean-and-jerk",
     "name": "Clean and Jerk",
     "bodyPart": "Olympic",
-    "category": "Barbell"
+    "category": "Barbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "burpee",
     "name": "Burpee",
     "bodyPart": "Full Body",
-    "category": "Reps Only"
+    "category": "Reps Only",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "mountain-climber",
     "name": "Mountain Climber",
     "bodyPart": "Core",
-    "category": "Reps Only"
+    "category": "Reps Only",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "stationary-bike",
     "name": "Stationary Bike",
     "bodyPart": "Cardio",
-    "category": "Cardio"
+    "category": "Cardio",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "treadmill-run",
     "name": "Treadmill Run",
     "bodyPart": "Cardio",
-    "category": "Duration"
+    "category": "Duration",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "rowing-machine",
     "name": "Rowing Machine",
     "bodyPart": "Cardio",
-    "category": "Cardio"
+    "category": "Cardio",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "jump-rope",
     "name": "Jump Rope",
     "bodyPart": "Cardio",
-    "category": "Duration"
+    "category": "Duration",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "step-up",
     "name": "Step Up",
     "bodyPart": "Legs",
-    "category": "Weighted Bodyweight"
+    "category": "Weighted Bodyweight",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "hip-thrust",
     "name": "Hip Thrust",
     "bodyPart": "Legs",
-    "category": "Weighted Bodyweight"
+    "category": "Weighted Bodyweight",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "dumbbell-lateral-raise",
     "name": "Dumbbell Lateral Raise",
     "bodyPart": "Shoulders",
-    "category": "Dumbbell"
+    "category": "Dumbbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   },
   {
     "id": "dumbbell-bench-press",
     "name": "Dumbbell Bench Press",
     "bodyPart": "Chest",
-    "category": "Dumbbell"
+    "category": "Dumbbell",
+    "previousSets": [
+        {
+          "reps": 0,
+          "weight": 0.0
+        }
+    ]
   }
 ]
