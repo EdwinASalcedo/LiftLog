@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct WorkoutView: View {
+    // Pass in template or template.empty
     let template: Template
+    // copy the exercises to local var so that they can be editable
+    @State private var exercises: [Exercise]
     
     var body: some View {
         NavigationStack {
@@ -19,7 +22,6 @@ struct WorkoutView: View {
                         Text("June 17, 2025")
                         Spacer()
                     }
-                    
                     HStack {
                         Image(systemName: "clock")
                         Text("Time elapsed")
@@ -27,7 +29,9 @@ struct WorkoutView: View {
                     }
                     .padding(.bottom)
                     
-                    ForEach(template.exercises) { exercise in
+                    ForEach(exercises.indices, id: \.self) { exerciseIndex in
+                        let exercise = exercises[exerciseIndex]
+                        
                         HStack {
                             Text(exercise.name)
                                 .foregroundStyle(.blue)
@@ -56,11 +60,15 @@ struct WorkoutView: View {
                                 .padding(.trailing)
                         }
                         
-                        LazyVStack {
-                            SetRowView()
+                        ForEach(Array(zip(exercise.previousSets.indices, exercise.previousSets)), id: \.1.id) { index, _ in
+                            LazyVStack {
+                                SetRowView(set: $exercises[exerciseIndex].previousSets[index], setNumber: index + 1)
+                            }
                         }
                         
-                        Button(action: addSet) {
+                        Button {
+                            addSet(to: exerciseIndex)
+                        } label: {
                             Text("+ Add Set (Rest Timer)")
                                 .bold(true)
                                 .frame(maxWidth: .infinity)
@@ -70,6 +78,10 @@ struct WorkoutView: View {
                         .buttonStyle(.bordered)
                         .padding(.bottom)
                     }
+                    
+                    
+                    Spacer()
+                    
                     
                     Button(action: addExercise) {
                         Text("Add Exercise")
@@ -87,7 +99,7 @@ struct WorkoutView: View {
                     }
                     .buttonStyle(.bordered)
                     .tint(.red)
-                    .padding(.vertical)
+
                 }
                 .toolbar() {
                     ToolbarItem(placement: .navigationBarTrailing){
@@ -106,12 +118,23 @@ struct WorkoutView: View {
     }
     
     // Functions
+    
+    // in order to actually make any changes to the template and the other structs
+    // we must have copies of them and then later use a save function to make changes to
+    // the template itslef
+    init(template: Template) {
+        self.template = template
+        _exercises = State(initialValue: template.exercises)
+    }
+    
     func addExercise() {
         print("add Exercise Function")
     }
     
-    func addSet() {
+    func addSet(to exerciseIndex: Int) {
         print("add Set Function")
+        let newSet = LiftSet(reps: 0, weight: 0.0)
+        exercises[exerciseIndex].previousSets.append(newSet)
     }
 }
 

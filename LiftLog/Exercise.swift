@@ -12,7 +12,7 @@ struct Exercise: Identifiable, Codable, Hashable {
     var name: String
     var bodyPart: String
     var category: String
-    var previousSets: [Set] = [] // allows this to be optional during JSON decoding
+    var previousSets: [LiftSet] = [] // allows this to be optional during JSON decoding
     
     static let allExercises: [Exercise] = Bundle.main.decode("exercises.json")
 }
