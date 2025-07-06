@@ -12,6 +12,7 @@ struct Exercise: Identifiable, Codable, Hashable {
     var name: String
     var bodyPart: String
     var category: String
+    var imageName: String? // optional, either asset catalog/documents or user upload
     var previousSets: [LiftSet] = [] // allows this to be optional during JSON decoding
     
     static let allExercises: [Exercise] = Bundle.main.decode("exercises.json")

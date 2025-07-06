@@ -7,24 +7,43 @@
 
 import SwiftUI
 
+struct ExerciseThumbnail: View {
+    let exercise: Exercise
+
+    var body: some View {
+        if let imageName = exercise.imageName,
+           let uiImage = UIImage(named: imageName) {
+            Image(uiImage: uiImage)
+                .resizable()
+                .scaledToFill()
+                .clipShape(Circle())
+                .overlay(Circle().stroke(Color.gray.opacity(0.4), lineWidth: 1))
+        } else {
+            ZStack {
+                Text(String(exercise.name.prefix(1)).uppercased())
+                    .font(.headline)
+            }
+        }
+    }
+}
+
 struct ExcercisesView: View {
     /* Start of properties */
-    let exercises: [Exercise] = Bundle.main.decode("exercises.json")
+    @State private var exercises: [Exercise] = Bundle.main.decode("exercises.json")
+    @State private var userExercises: [Exercise] = ExerciseStore.shared.load()
     
-    @State private var selectedBodyPart: String = "Any Body Part"
-    @State private var selectedCategory: String = "Any Category"
+    @State private var selectedBodyPart = "Any Body Part"
+    @State private var selectedCategory = "Any Category"
     @State private var searchText = ""
+    @State private var showAddExercise = false
     
     let bodyParts = ["Any Body Part", "Core", "Chest", "Back", "Shoulders", "Arms", "Legs", "Other", "Olympic", "Full Body", "Cardio"]
     let categories = ["Any Category", "Barbell", "Dumbbell", "Machine / Other", "Weighted Bodyweight", "Assisted Bodyweight", "Reps Only", "Cardio", "Duration"]
     
     var filteredExercises: [Exercise] {
-//        if searchText.isEmpty {
-//            exercises
-//        } else {
-//            exercises.filter { $0.name.localizedStandardContains(searchText) }
-//        }
-        exercises.filter { exercise in
+        let allExercises = exercises + userExercises
+        
+        return allExercises.filter { exercise in
             (selectedBodyPart == "Any Body Part" || exercise.bodyPart == selectedBodyPart) &&
             (selectedCategory == "Any Category" || exercise.category == selectedCategory) &&
             (searchText.isEmpty || exercise.name.localizedStandardContains(searchText))
@@ -71,8 +90,10 @@ struct ExcercisesView: View {
                 // Scrollable exercise list
                 List(filteredExercises.sorted(by: { $0.name < $1.name })) { exercise in
                     HStack {
-                        Image(systemName: "questionmark.circle")
-                            .padding(.horizontal)
+//                        Image(systemName: "questionmark.circle")
+//                            .padding(.horizontal)
+                        ExerciseThumbnail(exercise: exercise)
+                            .frame(width: 40, height: 40)
                         
                         VStack(alignment: .leading) {
                             Text(exercise.name)
@@ -86,7 +107,10 @@ struct ExcercisesView: View {
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading){
                     Button("New") {
-                        // code to add new exercise
+                        showAddExercise = true
+                    }
+                    .sheet(isPresented: $showAddExercise) {
+                        AddExerciseView(userExercises: $userExercises)
                     }
                 }
                 
